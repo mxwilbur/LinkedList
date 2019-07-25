@@ -19,6 +19,7 @@ def print_values(list_node)
   end
 end
 
+# 'class Stack' reverses linkedlist
 class Stack
     attr_reader :data
 
@@ -26,14 +27,10 @@ class Stack
         @data = nil
     end
 
-    # Push a value onto the stack
     def push(value)
       @data = LinkedListNode.new(value,@data)
     end
 
-    # Pop an item off the stack.
-    # Remove the last item that was pushed onto the
-    # stack and return the value to the user
     def pop
       if @data 
         @data = @data.next_node
@@ -45,25 +42,18 @@ class Stack
 
 end
 
-# newstack = Stack.new
-# newstack.push(3)
-# newstack.push(5)
-# newstack.push(7)
-# print_values(newstack.data)
-# newstack.pop
-# print_values(newstack.data)
-
+# below reverses linkedlist via iterative process
 def reverse_list(list)
-    # ADD CODE HERE
+
   stack = Stack.new
 
   while list
-      # ADD CODE HERE
+    
     stack.push(list.value)
     list = list.next_node
   end
 
-    # ADD CODE HERE
+  
   stack.data  
 end
 
@@ -72,8 +62,6 @@ node2 = LinkedListNode.new(99,node1)
 node3 = LinkedListNode.new(12,node2)
 
 
-
-# THIS IS THE ASSIGNMENT BELOW (SO TO SPEAK)
 print_values(node3)
 
 puts "-------"
